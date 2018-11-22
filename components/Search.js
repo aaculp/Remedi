@@ -14,8 +14,7 @@ export default class Search extends Component {
       <View style = {styles.container}>
 
         <Button
-          title = '<'
-          titleSize = {40}
+          leftIcon = {{name: 'chevron-left', type: 'font-awesome', size: 30}}
           color = 'white'
           onPress = {() => this.props.navigation.navigate('Restrictions')}
           buttonStyle = {{
@@ -28,12 +27,43 @@ export default class Search extends Component {
         </View>
 
         <View style = {styles.meals}>
-        <Button title = 'Breakfast' />
-        <Button title = 'Lunch' />
-        <Button title = 'Dinner' />
+        <Button
+          title = 'Breakfast'
+          buttonStyle = {{
+            backgroundColor: 'transparent',
+            width: 100,
+            height: 50,
+            borderColor: 'white',
+            borderWidth: 1,
+            borderRadius: 30,
+            marginTop: 10,
+          }} />
+        <Button
+          title = 'Lunch'
+          buttonStyle = {{
+            backgroundColor: 'transparent',
+            width: 100,
+            height: 50,
+            borderColor: 'white',
+            borderWidth: 1,
+            borderRadius: 30,
+            marginTop: 10,
+          }} />
+        <Button
+          title = 'Dinner'
+          buttonStyle = {{
+            backgroundColor: 'transparent',
+            width: 100,
+            height: 50,
+            borderColor: 'white',
+            borderWidth: 1,
+            borderRadius: 30,
+            marginTop: 10,
+          }} />
         </View>
 
         <View style = {styles.slider}>
+        <Text style = {styles.header}> How Hungry Are You? </Text>
         <Slider
           value={this.state.value}
           minimumValue = {0}
@@ -43,15 +73,17 @@ export default class Search extends Component {
         </View>
 
         <View style = {styles.feeling}>
-        <Text style = {styles.feeling}> How are you feeling? </Text>
+        <Text style = {styles.feeling}> How Are You Feeling? </Text>
         </View>
 
         <View style = {styles.mood}>
         <Button
           title = 'Headache'
           buttonStyle = {{
-            backgroundColor: 'rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
             borderRadius: 25,
+            borderColor: 'white',
+            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
             marginVertical: 15,
@@ -60,24 +92,30 @@ export default class Search extends Component {
         <Button
           title = 'Anxious'
           buttonStyle = {{
-            backgroundColor: 'rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
             borderRadius: 25,
+            borderColor: 'white',
+            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
           }} />
         <Button
           title = 'Fatigue'
           buttonStyle = {{
-            backgroundColor: 'rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
             borderRadius: 25,
+            borderColor: 'white',
+            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
           }} />
         <Button
           title = 'Stomacheache'
           buttonStyle = {{
-            backgroundColor: 'rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
             borderRadius: 25,
+            borderColor: 'white',
+            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
             marginVertical: 15,
@@ -86,24 +124,30 @@ export default class Search extends Component {
         <Button
           title = 'Alert'
           buttonStyle = {{
-            backgroundColor: 'rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
             borderRadius: 25,
+            borderColor: 'white',
+            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
           }} />
         <Button
           title = 'Low Energy'
           buttonStyle = {{
-            backgroundColor: 'rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
             borderRadius: 25,
+            borderColor: 'white',
+            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
           }} />
         <Button
           title = 'Bloated'
           buttonStyle = {{
-            backgroundColor: 'rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
             borderRadius: 25,
+            borderColor: 'white',
+            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
             marginVertical: 15,
@@ -112,8 +156,10 @@ export default class Search extends Component {
         <Button
           title = 'Unproductive'
           buttonStyle = {{
-            backgroundColor: 'rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
             borderRadius: 25,
+            borderColor: 'white',
+            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
           }} />
@@ -123,7 +169,12 @@ export default class Search extends Component {
         <Button
           title = 'Search'
           buttonStyle = {{
-            backgroundColor: 'pink',
+            backgroundColor: 'transparent',
+            borderRadius: 25,
+            borderColor: 'white',
+            borderWidth: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         />
         </View>

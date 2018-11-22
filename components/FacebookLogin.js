@@ -21,6 +21,7 @@ export default class FacebookLogin extends React.Component {
         // Get the user's name using Facebook's Graph API
         const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
         Alert.alert('Logged in!', `Hi ${(await response.json()).name}!`);
+        console.log(response.json)
         setTimeout(() => {
           this.props.navigation.navigate('ProfileSettings')
         }, 100)

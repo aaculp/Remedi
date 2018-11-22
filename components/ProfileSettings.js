@@ -15,10 +15,11 @@ export default class ProfileSettings extends Component {
         <Button
           title = 'Favorites'
           color = 'white'
+          rightIcon = {{name: 'chevron-right', type: 'font-awesome'}}
           onPress = {() => {this.props.navigation.navigate('')}}
           buttonStyle = {{
             backgroundColor: 'transparent',
-            width: 200,
+            width: 250,
             height: 50,
             borderColor: 'white',
             borderWidth: 1,
@@ -29,10 +30,11 @@ export default class ProfileSettings extends Component {
         <Button
           title = 'History'
           color = 'white'
+          rightIcon = {{name: 'chevron-right', type: 'font-awesome'}}
           onPress = {() => {this.props.navigation.navigate('')}}
           buttonStyle = {{
             backgroundColor: 'transparent',
-            width: 200,
+            width: 250,
             height: 50,
             borderColor: 'white',
             borderWidth: 1,
@@ -43,10 +45,11 @@ export default class ProfileSettings extends Component {
         <Button
           title = 'Dietary Restrictions'
           color = 'white'
+          rightIcon = {{name: 'chevron-right', type: 'font-awesome'}}
           onPress = {() => {this.props.navigation.navigate('Restrictions')}}
           buttonStyle = {{
             backgroundColor: 'transparent',
-            width: 200,
+            width: 250,
             height: 50,
             borderColor: 'white',
             borderWidth: 1,
@@ -57,10 +60,11 @@ export default class ProfileSettings extends Component {
         <Button
           title = 'Dietary Goals'
           color = 'white'
+          rightIcon = {{name: 'chevron-right', type: 'font-awesome'}}
           onPress = {() => {this.props.navigation.navigate('')}}
           buttonStyle = {{
             backgroundColor: 'transparent',
-            width: 200,
+            width: 250,
             height: 50,
             borderColor: 'white',
             borderWidth: 1,
@@ -71,10 +75,11 @@ export default class ProfileSettings extends Component {
         <Button
           title = 'Account Settings'
           color = 'white'
+          rightIcon = {{name: 'chevron-right', type: 'font-awesome'}}
           onPress = {() => {this.props.navigation.navigate('')}}
           buttonStyle = {{
             backgroundColor: 'transparent',
-            width: 200,
+            width: 250,
             height: 50,
             borderColor: 'white',
             borderWidth: 1,
@@ -85,10 +90,11 @@ export default class ProfileSettings extends Component {
         <Button
           title = 'Contact Us'
           color = 'white'
+          rightIcon = {{name: 'chevron-right', type: 'font-awesome'}}
           onPress = {() => {this.props.navigation.navigate('')}}
           buttonStyle = {{
             backgroundColor: 'transparent',
-            width: 200,
+            width: 250,
             height: 50,
             borderColor: 'white',
             borderWidth: 1,

@@ -11,7 +11,7 @@ export default class Splash extends Component {
 
     setTimeout(() => {
       this.props.navigation.navigate('FacebookLogin')
-    }, 300)
+    }, 3000)
 
     return(
       <View style = {styles.container}>
