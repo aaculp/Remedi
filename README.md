@@ -88,7 +88,7 @@ Sketch: Coming Soon!
 | Make It | L | -- | 4.5hrs | -- |
 | Buy It | L | -- | 4.5hrs | -- |
 | CSS | L | 5hrs | -- | 2hrs |
-| Total | 43hrs | 34hrs | 9hrs | -- |
+| Total | 43hrs | 34hrs | 9hrs | 11hrs |
 
 ## ERD
 
