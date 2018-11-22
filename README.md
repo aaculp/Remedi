@@ -6,15 +6,15 @@
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Project Description / Wireframes / Priority Matrix / Functional Components | Complete
-|Day 2| Splash / Log In / Sign Up Pages | Incomplete
-|Day 3| Database Set Up | Incomplete
-|Day 4| Database Set Up | Incomplete
-|Day 5| Profile / Personalization 1 & 2 Page Layout | Incomplete
-|Day 6| Functionality For Above Pages | Incomplete
-|Day 7| Render Make It / Buy It | Incomplete
-|Day 8| Render Make It / Buy It | Incomplete
-|Day 9| Present | Incomplete
+|Monday| Project Description / Wireframes / Priority Matrix / Functional Components | Complete
+|Tuesday| Splash / Log In / Sign Up Pages | Incomplete
+|Wednesday| Database Set Up | Incomplete
+|Thursday| Database Set Up | Incomplete
+|Friday| Profile / Personalization 1 & 2 Page Layout | Incomplete
+|Saturday| Functionality For Above Pages | Incomplete
+|Sunday| Render Make It / Buy It | Incomplete
+|Monday| Render Make It / Buy It | Incomplete
+|Tuesday| Present | Incomplete
 
 
 ## Project Description
@@ -78,16 +78,16 @@ Sketch: Coming Soon!
 
 | Component | Priority | Estimated MVP Time | Estimated PostMVP Time | Time Invetsted |
 | --- | :---: |  :---: | :---: | :---: |
-| Splash | H | 1hr | -- | -- |
-| Sign Up | H | 2hrs | -- | -- |
-| Sign In | H | 2hrs | -- | -- |
-| Profile Settings | H | 4hrs | -- | -- |
-| Search | H | 7hrs | -- | -- |
+| Splash | H | 1hr | -- | 1hr |
+| Sign Up | H | 2hrs | -- | 2hrs |
+| Sign In | H | 2hrs | -- | 1hr |
+| Profile Settings | H | 4hrs | -- | 3hrs |
+| Search | H | 7hrs | -- | 2hrs |
 | Results | H | 5hrs| -- | -- |
 | Database | H | 8hrs | -- | -- |
 | Make It | L | -- | 4.5hrs | -- |
 | Buy It | L | -- | 4.5hrs | -- |
-| CSS | L | 5hrs | -- | -- |
+| CSS | L | 5hrs | -- | 2hrs |
 | Total | 43hrs | 34hrs | 9hrs | -- |
 
 ## ERD

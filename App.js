@@ -1,21 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createSwitchNavigator } from 'react-navigation';
+import Splash from './components/Splash'
+import FacebookLogin from './components/FacebookLogin'
+import SignIn from './components/SignIn'
+import ProfileSettings from './components/ProfileSettings'
+import Restrictions from './components/Restrictions'
+import Search from './components/Search'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = createSwitchNavigator (
+    {
+      Splash,
+      FacebookLogin,
+      SignIn,
+      ProfileSettings,
+      Restrictions,
+      Search,
+    },
+    {
+      initialRouteName: "Splash"
+    }
+  );
+
+export default App;

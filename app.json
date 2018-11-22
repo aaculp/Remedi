@@ -22,6 +22,9 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "facebookScheme": "fb189386285344595",
+    "facebookAppId": "189386285344595",
+    "facebookDisplayName": "Remedi",
   }
 }
