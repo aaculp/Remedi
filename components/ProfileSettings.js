@@ -11,7 +11,7 @@ export default class ProfileSettings extends Component {
       <View style = {styles.container}>
         <StatusBar barStyle = 'light-content'/>
         <Image source = {require('../assets/icon.png')} style={styles.Image} />
-        <Text style = {styles.name}> Lily</Text>
+        <Text style = {styles.name}> Welcome Lily </Text>
         <Button
           title = 'Favorites'
           color = 'white'
@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontWeight: 'bold',
+
   },
   input: {
     backgroundColor: 'rgba(255,255,255,0.3)',
@@ -130,4 +131,10 @@ const styles = StyleSheet.create({
     borderRadius: 55,
     width: 200,
   },
+  Image: {
+    height: 200,
+    width: 250,
+    borderRadius: 25,
+    marginBottom: 75,
+  }
 })

@@ -21,7 +21,6 @@ export default class FacebookLogin extends React.Component {
         // Get the user's name using Facebook's Graph API
         const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
         Alert.alert('Logged in!', `Hi ${(await response.json()).name}!`);
-        console.log(response.json)
         setTimeout(() => {
           this.props.navigation.navigate('ProfileSettings')
         }, 100)
@@ -64,17 +63,8 @@ export default class FacebookLogin extends React.Component {
               placeholder = 'Password'
               placeholderTextColor = 'white'
               secureTextEntry
-              returnKeyType = 'next'
-              ref = {(input) => this.passwordInput = input}
-              onSubmitEditing = {() => this.passwordTwo.focus()}
-              style = {styles.input}
-            />
-            <TextInput
-              placeholder = 'Reenter Password'
-              placeholderTextColor = 'white'
-              secureTextEntry
               returnKeyType = 'go'
-              ref = {(input) => this.passwordTwo = input}
+              ref = {(input) => this.passwordInput = input}
               style = {styles.input}
             />
             <Button
@@ -105,7 +95,6 @@ export default class FacebookLogin extends React.Component {
                 borderColor: 'white',
                 borderWidth: 1,
                 borderRadius: 30,
-                marginTop: 20
               }}
             />
             <Button
@@ -119,7 +108,7 @@ export default class FacebookLogin extends React.Component {
                 borderColor: 'white',
                 borderWidth: 1,
                 borderRadius: 30,
-                marginTop: 20
+                marginTop: 25
               }}
             />
           </View>
@@ -131,20 +120,17 @@ export default class FacebookLogin extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
-    backgroundColor: 'pink',
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf: 'center',
-  },
-  formContainer: {
     flex: 1,
     backgroundColor: 'pink',
     alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  formContainer: {
+    backgroundColor: 'pink',
+    alignItems: 'center',
     justifyContent: 'center',
-    height: height,
     width: width,
-    paddingVertical: 50,
+    marginTop: 25,
   },
   title: {
     flex: 1,
@@ -159,14 +145,18 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     paddingVertical: 20,
     borderRadius: 55,
-    width: 200,
+    width: 325,
   },
   Image: {
+    justifyContent: 'center',
+    alignItems: 'center',
     height: 200,
-    width: 200,
-    marginTop: 75,
+    width: 250,
+    borderRadius: 25,
+    marginTop: 50
   },
   buttons: {
     fontWeight: 'bold',
+    marginTop: 75,
   }
 });

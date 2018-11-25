@@ -30,9 +30,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   text:{
+    marginBottom: 50,
     fontSize: 40,
     fontWeight: 'bold',
     color: 'white',
+  },
+  Image: {
+    height: 200,
+    width: 300,
+    borderRadius: 25,
   }
 })
 

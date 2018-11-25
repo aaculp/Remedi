@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Dimensions, StatusBar } from 'react-native'
 import { Button, Slider } from 'react-native-elements'
 
 const { width, height } = Dimensions.get('window')
@@ -10,11 +10,12 @@ export default class Search extends Component {
   }
 
   render() {
+    console.log(width)
     return(
       <View style = {styles.container}>
-
+      <StatusBar barStyle = 'light-content'/>
         <Button
-          leftIcon = {{name: 'chevron-left', type: 'font-awesome', size: 30}}
+          leftIcon = {{name: 'chevron-left', type: 'font-awesome', size: 50}}
           color = 'white'
           onPress = {() => this.props.navigation.navigate('Restrictions')}
           buttonStyle = {{
@@ -22,6 +23,7 @@ export default class Search extends Component {
             width: 50,
             backgroundColor: 'transparent',
           }}/>
+
         <View style = {styles.header}>
         <Text style = {styles.header}> Select One: </Text>
         </View>
@@ -65,11 +67,16 @@ export default class Search extends Component {
         <View style = {styles.slider}>
         <Text style = {styles.header}> How Hungry Are You? </Text>
         <Slider
-          value={this.state.value}
+          value={2.5}
           minimumValue = {0}
+          minimumTrackTintColor = 'red'
+          maximumTrackTintColor = 'green'
           maximumValue = {5}
+          trackStyle = {{
+            marginLeft: 10,
+            marginRight: 10
+          }}
           onValueChange={(value) => this.setState({value: Math.floor(value)})} />
-        <Text style = {styles.sliderValue}>Value: {this.state.value}</Text>
         </View>
 
         <View style = {styles.feeling}>
@@ -86,8 +93,7 @@ export default class Search extends Component {
             borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            marginVertical: 15,
-            width: (width / 2),
+            width: 175,
           }} />
         <Button
           title = 'Anxious'
@@ -98,6 +104,7 @@ export default class Search extends Component {
             borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
+            width: 175,
           }} />
         <Button
           title = 'Fatigue'
@@ -108,6 +115,7 @@ export default class Search extends Component {
             borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
+            width: 175,
           }} />
         <Button
           title = 'Stomacheache'
@@ -119,7 +127,7 @@ export default class Search extends Component {
             justifyContent: 'center',
             alignItems: 'center',
             marginVertical: 15,
-            width: (width / 2),
+            width: 175,
           }} />
         <Button
           title = 'Alert'
@@ -130,6 +138,7 @@ export default class Search extends Component {
             borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
+            width: 175,
           }} />
         <Button
           title = 'Low Energy'
@@ -140,6 +149,7 @@ export default class Search extends Component {
             borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
+            width: 175,
           }} />
         <Button
           title = 'Bloated'
@@ -151,7 +161,7 @@ export default class Search extends Component {
             justifyContent: 'center',
             alignItems: 'center',
             marginVertical: 15,
-            width: (width / 2),
+            width: 175,
           }} />
         <Button
           title = 'Unproductive'
@@ -162,6 +172,7 @@ export default class Search extends Component {
             borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
+            width: 175,
           }} />
         </View>
 

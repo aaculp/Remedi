@@ -28,21 +28,34 @@ render() {
               secureTextEntry
               returnKeyType = 'go'
               ref = {(input) => this.passwordInput = input}
-              onSubmitEditing = {() => this.passwordTwo.focus()}
+              onSubmitEditing = {() => {this.props.navigation.navigate('ProfileSettings')}}
               style = {styles.input}
             />
             <Button
               title = 'LOGIN'
               color = 'pink'
-              onPress = {() =>{this.props.navigation.navigate('ProfileSettings')}}
+              onPress = {() => {this.props.navigation.navigate('ProfileSettings')}}
               buttonStyle = {{
                 backgroundColor: 'white',
                 width: 200,
                 height: 50,
                 borderColor: 'white',
+                borderRadius: 30,
+                marginTop: 50
+              }}
+            />
+            <Button
+              title = 'Need To Create An Account?'
+              color = 'white'
+              onPress={() =>{this.props.navigation.navigate('FacebookLogin')}}
+              buttonStyle = {{
+                backgroundColor: 'transparent',
+                width: 300,
+                height: 50,
+                borderColor: 'transparent',
                 borderWidth: 1,
                 borderRadius: 30,
-                marginTop: 150
+                marginTop: 50
               }}
             />
           </View>
@@ -53,27 +66,15 @@ render() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 1,
     backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'center',
   },
   formContainer: {
-    flex: 1,
-    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
-    height: height,
-    width: width,
     paddingVertical: 50,
-  },
-  title: {
-    flex: 1,
-    fontSize: 30,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    color: 'white',
   },
   input: {
     backgroundColor: 'rgba(255,255,255,0.3)',
@@ -81,9 +82,12 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     paddingVertical: 20,
     borderRadius: 55,
-    width: 200,
+    width: 325,
   },
-  image: {
+  Image: {
+    height: 200,
+    width: 250,
+    borderRadius: 25,
   },
   buttons: {
 
