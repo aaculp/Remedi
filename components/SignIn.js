@@ -1,42 +1,62 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image, TextInput, KeyboardAvoidingView, StatusBar, Dimensions }  from 'react-native'
+import { StyleSheet, View, Text, TextInput, KeyboardAvoidingView, StatusBar, Dimensions, ImageBackground }  from 'react-native'
 import { Button } from 'react-native-elements';
 
 const { width, height } = Dimensions.get('window')
 
 export default class SignIn extends Component {
-render() {
+  state = {
+    username: '',
+    password: '',
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    console.log(this.state.username)
+    console.log(this.state.password)
+    this.props.navigation.navigate('ProfileSettings')
+
+  }
+  render() {
     return (
       <KeyboardAvoidingView behavior = 'padding' style={styles.container}>
         <StatusBar barStyle = 'light-content'/>
-        <Image source = {require('../assets/icon.png')} style={styles.Image} />
+        <ImageBackground
+        source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543255900/Remedi/Images/Sign_Up.png'}}
+        style = {styles.ImageBackground}
+        >
+
+        <Text style = {styles.headingTitle}> REMEDI </Text>
           <View style = {styles.formContainer}>
             <TextInput
+              value = {this.state.username}
               placeholder = 'Username'
-              placholderTextColor = 'white'
+              placeholderTextColor = 'white'
               returnKeyType = 'next'
               ref = {(input) => this.username = input}
               onSubmitEditing = {() => this.passwordInput.focus()}
+              onChangeText = {(username) => this.setState({username})}
               keyboardType = 'email-address'
               autoCapitalize = 'none'
               autoCorrect = {false}
               style = {styles.input}
             />
             <TextInput
+              value = {this.state.password}
               placeholder = 'Password'
-              placholderTextColor = 'white'
+              placeholderTextColor = 'white'
               secureTextEntry
               returnKeyType = 'go'
               ref = {(input) => this.passwordInput = input}
-              onSubmitEditing = {() => {this.props.navigation.navigate('ProfileSettings')}}
+              onChangeText = {(password) => this.setState({password})}
               style = {styles.input}
             />
             <Button
               title = 'LOGIN'
-              color = 'pink'
-              onPress = {() => {this.props.navigation.navigate('ProfileSettings')}}
+              color = 'white'
+              onPress = {(e) => {this.handleSubmit(e)}}
               buttonStyle = {{
-                backgroundColor: 'white',
+                backgroundColor: 'darkgreen',
                 width: 200,
                 height: 50,
                 borderColor: 'white',
@@ -59,6 +79,7 @@ render() {
               }}
             />
           </View>
+        </ImageBackground>
       </KeyboardAvoidingView>
     );
   }
@@ -70,6 +91,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  headingTitle: {
+    fontWeight: 'bold',
+    color: 'white',
+    fontSize: 75,
+    textAlign: 'center',
+    marginTop: 150,
+    marginBottom: 50,
   },
   formContainer: {
     alignItems: 'center',
@@ -84,12 +113,8 @@ const styles = StyleSheet.create({
     borderRadius: 55,
     width: 325,
   },
-  Image: {
-    height: 200,
-    width: 250,
-    borderRadius: 25,
+  ImageBackground: {
+    width,
+    height,
   },
-  buttons: {
-
-  }
 });

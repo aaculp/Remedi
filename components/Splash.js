@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, Dimensions } from 'react-native';
 
+const { width, height } = Dimensions.get('window')
 
 export default class Splash extends Component {
-  state = {
-    currentScreen: 'Splash'
-  }
-
   render() {
-
     setTimeout(() => {
       this.props.navigation.navigate('FacebookLogin')
-    }, 3000)
+    }, 300)
 
     return(
-      <View style = {styles.container}>
-        <Text style = {styles.text}> Remedi </Text>
-        <Image source = {require('../assets/icon.png')} style={styles.Image} />
-      </View>
+      <ImageBackground
+        source={{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543255901/Remedi/Images/Slash_Page.png'}}
+        style = {styles.ImageBackground} >
+        <View style = {styles.container}>
+          <Text style = {styles.text}> REMEDI </Text>
+        </View>
+      </ImageBackground>
     )
   }
 }
@@ -25,20 +24,19 @@ export default class Splash extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center'
   },
-  text:{
-    marginBottom: 50,
-    fontSize: 40,
+  text: {
+    fontSize: 100,
     fontWeight: 'bold',
     color: 'white',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  Image: {
-    height: 200,
-    width: 300,
-    borderRadius: 25,
-  }
+  ImageBackground: {
+    width,
+    height,
+  },
 })
 

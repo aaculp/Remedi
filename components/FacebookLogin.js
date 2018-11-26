@@ -1,11 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Alert, StatusBar, Dimensions, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Alert, StatusBar, Dimensions, KeyboardAvoidingView, ImageBackground} from 'react-native';
 import { Button } from 'react-native-elements';
 import * as Expo from 'expo'
 
 const { width, height } = Dimensions.get('window')
 
 export default class FacebookLogin extends React.Component {
+  state = {
+    name: '',
+    username: '',
+    password: '',
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    console.log(this.state.name)
+    console.log(this.state.username)
+    console.log(this.state.password)
+    this.props.navigation.navigate('ProfileSettings')
+  }
+
   logIn = async () => {
     try {
       const {
@@ -36,35 +50,49 @@ export default class FacebookLogin extends React.Component {
     return (
       <KeyboardAvoidingView  behavior = 'padding' style={styles.container}>
         <StatusBar barStyle = 'light-content'/>
-        <View style = {styles.formContainer}>
-        <Image source = {require('../assets/icon.png')} style={styles.Image} />
+        <ImageBackground
+        source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543255900/Remedi/Images/Sign_Up.png'}}
+        style = {styles.ImageBackground}
+        >
+
+        <View style = {styles.heading}>
+          <Text style = {styles.headingTitle}> REMEDI </Text>
+          <Text style = {styles.headingBio}>We provide natural cures for</Text>
+          <Text style = {styles.headingBio}> natural causes </Text>
         </View>
+
           <View style = {styles.formContainer}>
             <TextInput
+              value = {this.state.name}
               placeholder = 'Name'
               placeholderTextColor = 'white'
               returnKeyType = 'next'
               onSubmitEditing = {() => this.username.focus()}
+              onChangeText= {(name) => this.setState({name})}
               autoCapitalize = 'words'
               autoCorrect = {false}
               style = {styles.input}
             />
             <TextInput
+              value = {this.state.username}
               placeholder = 'Username'
               placeholderTextColor = 'white'
               returnKeyType = 'next'
               ref = {(input) => this.username = input}
               onSubmitEditing = {() => this.passwordInput.focus()}
+              onChangeText={(username) => this.setState({username})}
               autoCapitalize = 'none'
               autoCorrect = {false}
               style = {styles.input}
             />
             <TextInput
+              value = {this.state.password}
               placeholder = 'Password'
               placeholderTextColor = 'white'
               secureTextEntry
               returnKeyType = 'go'
               ref = {(input) => this.passwordInput = input}
+              onChangeText={(password) => this.setState({password})}
               style = {styles.input}
             />
             <Button
@@ -86,14 +114,15 @@ export default class FacebookLogin extends React.Component {
           <View style = {styles.buttons}>
             <Button
               title = 'Sign Up!'
-              color = 'pink'
-              onPress={() =>{this.props.navigation.navigate('ProfileSettings')}}
+              titleStyle = {{
+                fontWeight: 'bold'
+              }}
+              color = 'white'
+              onPress={(e) =>{this.handleSubmit(e)}}
               buttonStyle = {{
-                backgroundColor: 'white',
+                backgroundColor: 'darkgreen',
                 width: 200,
                 height: 50,
-                borderColor: 'white',
-                borderWidth: 1,
                 borderRadius: 30,
               }}
             />
@@ -105,14 +134,12 @@ export default class FacebookLogin extends React.Component {
                 backgroundColor: 'blue',
                 width: 200,
                 height: 50,
-                borderColor: 'white',
-                borderWidth: 1,
                 borderRadius: 30,
                 marginTop: 25
               }}
             />
           </View>
-
+          </ImageBackground>
       </KeyboardAvoidingView>
     );
   }
@@ -121,16 +148,38 @@ export default class FacebookLogin extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  heading: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 25,
+  },
+  headingTitle: {
+    fontWeight: 'bold',
+    fontSize: 50,
+    color: 'white',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
+    marginBottom: 50,
+  },
+  headingBio: {
+    paddingHorizontal: 25,
+    fontSize: 25,
+    color: 'white',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   formContainer: {
-    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
     width: width,
-    marginTop: 25,
+    marginTop: 100,
   },
   title: {
     flex: 1,
@@ -147,16 +196,14 @@ const styles = StyleSheet.create({
     borderRadius: 55,
     width: 325,
   },
-  Image: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 200,
-    width: 250,
-    borderRadius: 25,
-    marginTop: 50
-  },
   buttons: {
     fontWeight: 'bold',
     marginTop: 75,
-  }
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  ImageBackground: {
+    width,
+    height,
+  },
 });

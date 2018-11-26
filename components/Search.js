@@ -7,11 +7,46 @@ const { width, height } = Dimensions.get('window')
 export default class Search extends Component {
   state = {
     value: 0,
+    breakfast: false,
+    lunch: false,
+    dinner: false,
+    headache: false,
+    fatigue: false,
+    anxious: false,
+    stomacheache: false,
+    alert: false,
+    lowEnergy: false,
+    bloated: false,
+    unproductive: false,
+    active: false,
   }
 
+  handleSubmit(e) {
+    e.preventDefault
+    this.setState({
+    value: this.state.value,
+    breakfast: this.state.breakfast,
+    lunch: this.state.lunch,
+    dinner: this.state.dinner,
+    headache: this.state.headache,
+    fatigue: this.state.fatigue,
+    anxious: this.state.anxious,
+    stomacheache: this.state.stomacheache,
+    alert: this.state.alert,
+    lowEnergy: this.state.lowEnergy,
+    bloated: this.state.bloated,
+    unproductive: this.state.unproductive,
+    })
+  }
+
+
+
   render() {
-    console.log(width)
-    return(
+    console.log(this.state.breakfast)
+    console.log(this.state.lunch)
+    console.log(this.state.dinner)
+    console.log(this.state.value)
+    return (
       <View style = {styles.container}>
       <StatusBar barStyle = 'light-content'/>
         <Button
@@ -22,7 +57,8 @@ export default class Search extends Component {
             marginTop: 50,
             width: 50,
             backgroundColor: 'transparent',
-          }}/>
+          }}
+        />
 
         <View style = {styles.header}>
         <Text style = {styles.header}> Select One: </Text>
@@ -31,17 +67,20 @@ export default class Search extends Component {
         <View style = {styles.meals}>
         <Button
           title = 'Breakfast'
+          onPress = {() => this.setState({breakfast: !this.state.breakfast, active: !this.state.active})}
           buttonStyle = {{
-            backgroundColor: 'transparent',
+            backgroundColor: this.state.active ? 'green' : 'transparent',
             width: 100,
             height: 50,
             borderColor: 'white',
             borderWidth: 1,
             borderRadius: 30,
             marginTop: 10,
-          }} />
+          }}
+          />
         <Button
           title = 'Lunch'
+          onPress = {() => this.setState({lunch: !this.state.lunch})}
           buttonStyle = {{
             backgroundColor: 'transparent',
             width: 100,
@@ -53,6 +92,7 @@ export default class Search extends Component {
           }} />
         <Button
           title = 'Dinner'
+          onPress = {() => this.setState({dinner: !this.state.dinner})}
           buttonStyle = {{
             backgroundColor: 'transparent',
             width: 100,
@@ -67,7 +107,7 @@ export default class Search extends Component {
         <View style = {styles.slider}>
         <Text style = {styles.header}> How Hungry Are You? </Text>
         <Slider
-          value={2.5}
+          value = {2.5}
           minimumValue = {0}
           minimumTrackTintColor = 'red'
           maximumTrackTintColor = 'green'
@@ -76,7 +116,8 @@ export default class Search extends Component {
             marginLeft: 10,
             marginRight: 10
           }}
-          onValueChange={(value) => this.setState({value: Math.floor(value)})} />
+          onValueChange={(value) => this.setState({value: Math.floor(value)})}
+        />
         </View>
 
         <View style = {styles.feeling}>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image, StatusBar, Dimensions } from  'react-native'
+import { StyleSheet, View, Text, StatusBar, Dimensions } from  'react-native'
 import { Button } from 'react-native-elements';
 
 
@@ -10,7 +10,6 @@ export default class ProfileSettings extends Component {
     return(
       <View style = {styles.container}>
         <StatusBar barStyle = 'light-content'/>
-        <Image source = {require('../assets/icon.png')} style={styles.Image} />
         <Text style = {styles.name}> Welcome Lily </Text>
         <Button
           title = 'Favorites'
@@ -121,7 +120,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontWeight: 'bold',
-
+    marginBottom: 55,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   input: {
     backgroundColor: 'rgba(255,255,255,0.3)',
@@ -131,10 +132,4 @@ const styles = StyleSheet.create({
     borderRadius: 55,
     width: 200,
   },
-  Image: {
-    height: 200,
-    width: 250,
-    borderRadius: 25,
-    marginBottom: 75,
-  }
 })
