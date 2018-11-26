@@ -24,20 +24,20 @@ Remedi will be a mobile application using React Native for users to find home or
 ## Wireframes
 
 Whiteboard: 
-[Wireframe Outline](https://res.cloudinary.com/aaronculp/image/upload/v1542664368/Remedi/Image_from_iOS.jpg)
-[Wireframe Outline](https://res.cloudinary.com/aaronculp/image/upload/v1542664367/Remedi/Image_from_iOS_1.jpg)
-[Wireframe Outline](https://res.cloudinary.com/aaronculp/image/upload/v1542664367/Remedi/Image_from_iOS_2.jpg)
-[Wireframe Outline](https://res.cloudinary.com/aaronculp/image/upload/v1542664367/Remedi/Image_from_iOS_3.jpg)
+[Wireframe Outline](https://res.cloudinary.com/aaronculp/image/upload/v1542664368/Remedi/Wireframes/Image_from_iOS.jpg)
+[Wireframe Outline](https://res.cloudinary.com/aaronculp/image/upload/v1542664367/Remedi/Wireframes/Image_from_iOS_1.jpg)
+[Wireframe Outline](https://res.cloudinary.com/aaronculp/image/upload/v1542664367/Remedi/Wireframes/Image_from_iOS_2.jpg)
+[Wireframe Outline](https://res.cloudinary.com/aaronculp/image/upload/v1542664367/Remedi/Wireframes/Image_from_iOS_3.jpg)
 
 Sketch: Coming Soon!
 
 ## Priority Matrix
 
-[Matrix](https://res.cloudinary.com/aaronculp/image/upload/v1542669501/Remedi/IMG_4464.jpg)
+[Matrix](https://res.cloudinary.com/aaronculp/image/upload/v1542669501/Remedi/Wireframes/IMG_4464.jpg)
 
 ### MVP/PostMVP 
 
-[MVP/PostMVP](https://res.cloudinary.com/aaronculp/image/upload/v1542669493/Remedi/IMG_4463.jpg)
+[MVP/PostMVP](https://res.cloudinary.com/aaronculp/image/upload/v1542669493/Remedi/Wireframes/IMG_4463.jpg)
 
 
 #### MVP 
@@ -57,8 +57,8 @@ Sketch: Coming Soon!
 
 ## React Architectural Design
 
-[Component Design](https://res.cloudinary.com/aaronculp/image/upload/v1542669480/Remedi/IMG_4461.jpg)
-[Component Design](https://res.cloudinary.com/aaronculp/image/upload/v1542669480/Remedi/IMG_4462.jpg)
+[Component Design](https://res.cloudinary.com/aaronculp/image/upload/v1542669480/Remedi/Wireframes/IMG_4461.jpg)
+[Component Design](https://res.cloudinary.com/aaronculp/image/upload/v1542669480/Remedi/Wireframes/IMG_4462.jpg)
 
 
 ## Functional Components
@@ -92,7 +92,7 @@ Sketch: Coming Soon!
 
 ## ERD
 
-[Database](https://res.cloudinary.com/aaronculp/image/upload/v1542669501/Remedi/IMG_4465.jpg)
+[Database](https://res.cloudinary.com/aaronculp/image/upload/v1542669501/Remedi/Wireframes/IMG_4465.jpg)
 
 
 
