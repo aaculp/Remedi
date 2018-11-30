@@ -58,21 +58,9 @@ export default class Restrictions extends Component {
         source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543255900/Remedi/Images/Sign_Up.png'}}
         style = {styles.ImageBackground}
       >
-      <View style = {styles.container}>
       <StatusBar barStyle = 'light-content' />
         <View style = {styles.bio}>
-          <View style = {styles.bioButton}>
-            <Button
-              leftIcon = {{name: 'chevron-left', type: 'font-awesome', size: 50}}
-              color = 'white'
-              onPress = {() => this.props.navigation.navigate('ProfileSettings')}
-              buttonStyle = {{
-                width: 50,
-                left: -150,
-                backgroundColor: 'transparent',
-              }} />
-            <Text style = {styles.name}>{this.state.name}</Text>
-          </View>
+          <Text style = {styles.name}>{this.state.name}</Text>
           <Text style = {styles.text}>Tell us more about yourself</Text>
         </View>
 
@@ -239,12 +227,14 @@ export default class Restrictions extends Component {
         />
         </View>
 
-        <TouchableOpacity>
+        <TouchableOpacity style = {styles.SaveButton}>
         <Button
           title = 'Save'
           color = 'rgb(245,222,179)'
           buttonStyle = {{
             backgroundColor: 'darkgreen',
+            justifyContent: 'center',
+            alignItems: 'center',
             width: 200,
             height: 50,
             borderRadius: 30,
@@ -254,17 +244,16 @@ export default class Restrictions extends Component {
         />
         </TouchableOpacity>
 
-      </View>
       </ImageBackground>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  ImageBackground: {
+    flex:1,
+    width,
+    height,
   },
   bio: {
     justifyContent: 'center',
@@ -293,11 +282,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginVertical: 20,
+    marginVertical: 40
   },
-  ImageBackground: {
-    width,
-    height,
-  },
+  SaveButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 })
 

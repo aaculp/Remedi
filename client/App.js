@@ -1,5 +1,5 @@
 import React from 'react';
-import { createSwitchNavigator } from 'react-navigation';
+import { createSwitchNavigator, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import Splash from './components/Splash'
 import FacebookLogin from './components/FacebookLogin'
 import SignIn from './components/SignIn'
@@ -8,20 +8,31 @@ import Restrictions from './components/Restrictions'
 import Search from './components/Search'
 import Results from  './components/Results'
 
+const SplashStack = createSwitchNavigator (
+  {
+    Splash,
+    FacebookLogin,
+    SignIn,
+  },
+  {
+    initialRouteName: 'Splash'
+  }
+)
 
-const App = createSwitchNavigator (
+SplashStack.navigationOptions = {
+  header: null,
+};
+
+const App = createStackNavigator (
     {
-      Splash,
-      FacebookLogin,
-      SignIn,
-      ProfileSettings,
+      SplashStack,
       Restrictions,
       Search,
       Results,
     },
     {
-      initialRouteName: "Splash"
+      initialRouteName: "SplashStack"
     }
-  );
+);
 
 export default App;

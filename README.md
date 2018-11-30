@@ -8,7 +8,7 @@
 |---|---| ---|
 |Monday| Project Description / Wireframes / Priority Matrix / Functional Components | Complete
 |Tuesday| Splash / Log In / Sign Up Pages | Complete
-|Wednesday| Database Set Up | Incomplete
+|Wednesday| Database Set Up | Complete
 |Thursday| Database Set Up | Incomplete
 |Friday| Profile / Personalization 1 & 2 Page Layout | Complete
 |Saturday| Functionality For Above Pages | Complete
@@ -82,13 +82,13 @@ Sketch: Coming Soon!
 | Sign Up | H | 2hrs | -- | 2hrs |
 | Sign In | H | 2hrs | -- | 1hr |
 | Profile Settings | H | 4hrs | -- | 3hrs |
-| Search | H | 7hrs | -- | 2hrs |
+| Search | H | 7hrs | -- | 4hrs |
 | Results | H | 5hrs| -- | -- |
-| Database | H | 8hrs | -- | 8hrs |
+| Database | H | 8hrs | -- | 10hrs |
 | Make It | L | -- | 4.5hrs | -- |
 | Buy It | L | -- | 4.5hrs | -- |
-| CSS | L | 5hrs | -- | 2hrs |
-| Total | 43hrs | 34hrs | 9hrs | 11hrs |
+| CSS | L | 5hrs | -- | 3hrs |
+| Total | 43hrs | 34hrs | 9hrs | 24hrs |
 
 ## ERD
 

@@ -64,16 +64,6 @@ export default class Search extends Component {
       style = {styles.ImageBackground}
       >
       <StatusBar barStyle = 'light-content' />
-        <Button
-          leftIcon = {{name: 'chevron-left', type: 'font-awesome', size: 50}}
-          color = 'white'
-          onPress = {() => this.props.navigation.navigate('Restrictions')}
-          buttonStyle = {{
-            marginTop: 50,
-            width: 50,
-            backgroundColor: 'transparent',
-          }}
-        />
 
         <View style = {styles.header}>
         <Text style = {styles.header}> WHAT TIME IS IT? </Text>
@@ -272,6 +262,11 @@ export default class Search extends Component {
 }
 
 const styles = StyleSheet.create({
+  ImageBackground: {
+    flex:1,
+    width,
+    height,
+  },
   header: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -311,9 +306,4 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginVertical: 20,
   },
-  ImageBackground: {
-    flex:1,
-    width,
-    height,
-  }
 })
