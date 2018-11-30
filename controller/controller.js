@@ -34,16 +34,6 @@ remediController.create = (req, res) => {
     name: req.body.name,
     username: req.body.username,
     password: req.body.password,
-    gluten: req.body.gluten,
-    vegan: req.body.vegan,
-    pescatarian: req.body.pescatarian,
-    halal: req.body.halal,
-    keto: req.body.keto,
-    dairy: req.body.dairy,
-    vegetarian: req.body.vegetarian,
-    kosher: req.body.kosher,
-    med: req.body.med,
-    paleo: req.body.paleo,
   })
     .then(users => {
       res.json({

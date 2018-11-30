@@ -8,10 +8,13 @@ import Restrictions from './components/Restrictions'
 import Search from './components/Search'
 import Results from  './components/Results'
 
+
+
 const SplashStack = createSwitchNavigator (
   {
     Splash,
     FacebookLogin,
+    Restrictions,
     SignIn,
   },
   {
@@ -26,7 +29,6 @@ SplashStack.navigationOptions = {
 const App = createStackNavigator (
     {
       SplashStack,
-      Restrictions,
       Search,
       Results,
     },

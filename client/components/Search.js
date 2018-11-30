@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, Dimensions, StatusBar, ImageBackground } from 'react-native'
 import { Button, Slider } from 'react-native-elements'
+import HeaderLogo from './HeaderLogo'
 import axios from 'axios'
+
 
 const { width, height } = Dimensions.get('window')
 
 export default class Search extends Component {
+  static navigationOptions = {
+    headerStyle: {
+      backgroundColor: 'darkgreen',
+      height: 65,
+    },
+    headerRight: <HeaderLogo />,
+  }
+
   state = {
     value: 2.5,
     breakfast: false,

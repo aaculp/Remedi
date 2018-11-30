@@ -1,10 +1,20 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, Image, Dimensions, StatusBar, ImageBackground, ScrollView } from 'react-native'
 import { Button, Slider, SearchBar } from 'react-native-elements'
+import HeaderLogo from './HeaderLogo'
+
 
 const { width, height } = Dimensions.get('window')
 
 export default class Results extends Component {
+  static navigationOptions = {
+    headerStyle: {
+      backgroundColor: 'darkgreen',
+      height: 65,
+    },
+    headerRight: <HeaderLogo />,
+  }
+
   state = {
     name: '',
   }
@@ -28,21 +38,7 @@ export default class Results extends Component {
       >
 
       <StatusBar barStyle = 'light-content' />
-        <View style = {styles.header}>
-          <Button
-            leftIcon = {{name: 'chevron-left', type: 'font-awesome', size: 50, marginTop: 35}}
-            color = 'white'
-            onPress = {() => this.props.navigation.navigate('Restrictions')}
-            buttonStyle = {{
-              marginTop: 50,
-              width: 50,
-              backgroundColor: 'transparent',
-            }}
-          />
-        <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529632/Remedi/Images/iPhone_8.png'}} style = {styles.logo} />
-      </View>
 
-      <View style = {styles.container}>
         <View style = {styles.titleContainer}>
           <Text style = {styles.title}> What CAN WE SERVE YOU</Text>
           <SearchBar
@@ -118,20 +114,16 @@ export default class Results extends Component {
         />
       </View>
 
-      </View>
       </ImageBackground>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  ImageBackground: {
     flex: 1,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    width,
+    height,
   },
   logo: {
     height: 75,
@@ -201,11 +193,4 @@ const styles = StyleSheet.create({
     borderColor: 'darkgreen',
     borderWidth: 5,
   },
-  ImageBackground: {
-    flex: 1,
-    width,
-    height,
-  }
 })
-
-633116164304015

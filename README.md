@@ -9,7 +9,7 @@
 |Monday| Project Description / Wireframes / Priority Matrix / Functional Components | Complete
 |Tuesday| Splash / Log In / Sign Up Pages | Complete
 |Wednesday| Database Set Up | Complete
-|Thursday| Database Set Up | Incomplete
+|Thursday| Database Set Up | Complete
 |Friday| Profile / Personalization 1 & 2 Page Layout | Complete
 |Saturday| Functionality For Above Pages | Complete
 |Sunday| Render Make It / Buy It | Incomplete
@@ -88,7 +88,8 @@ Sketch: Coming Soon!
 | Make It | L | -- | 4.5hrs | -- |
 | Buy It | L | -- | 4.5hrs | -- |
 | CSS | L | 5hrs | -- | 3hrs |
-| Total | 43hrs | 34hrs | 9hrs | 24hrs |
+| Functionality | H | 10hrs | 10hrs | 5hrs |
+| Total | 53hrs | 44hrs | 9hrs | 24hrs |
 
 ## ERD
 

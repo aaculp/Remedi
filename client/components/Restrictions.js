@@ -256,6 +256,7 @@ const styles = StyleSheet.create({
     height,
   },
   bio: {
+    marginTop: 150,
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
@@ -268,14 +269,15 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontWeight: 'bold',
     marginBottom: 50,
-    marginLeft: -75,
-    color: 'white'
+    color: 'white',
+    textAlign: 'center',
   },
   text: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 30,
-    color: 'white'
+    color: 'white',
+    textAlign: 'center',
   },
   checkbox: {
     justifyContent: 'center',
