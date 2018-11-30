@@ -20,11 +20,11 @@ Remedi.create = (users) => {
   return db.one(
     `
     INSERT INTO users
-    (name, username, password, gluten, vegan, pescatarian, halal, keto, dairy, vegetarian, kosher, med, paleo)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+    (name, username, password)
+    VALUES ($1, $2, $3)
     RETURNING *
   `,
-    [users.name, users.username, users.password, users.gluten, users.vegan, users.pescatarian, users.halal, users.keto, users.dairy, users.vegetarian, users.kosher, users.med, users.paleo]
+    [users.name, users.username, users.password]
   );
 };
 
@@ -32,16 +32,16 @@ Remedi.update = (users, id) => {
   return db.one(
     `
     UPDATE users SET
-    gluten = $1,
-    vegan = $2,
-    pescatarian = $3,
-    halal = $4,
-    keto = $5,
-    dairy = $6,
-    vegetarian = $7,
-    kosher = $8,
-    med = $9,
-    paleo = $10
+      gluten = $1,
+      vegan = $2,
+      pescatarian = $3,
+      halal = $4,
+      keto = $5,
+      dairy = $6,
+      vegetarian = $7,
+      kosher = $8,
+      med = $9,
+      paleo = $10
     WHERE id = $11
     RETURNING *
   `,
@@ -52,19 +52,22 @@ Remedi.update = (users, id) => {
 Remedi.updateFeelings = (users, id) => {
   return db.one(
     `
-    UPDATE feelings SET
-      headache = $1
-      fatigue = $2
-      alert = $3
-      anxious = $4
-      bloated = $5
-      stomacheache = $6
-      lowEnergy = $7
-      lethargic = $8
-    WHERE id = $9
+    UPDATE users SET
+      breakfast = $1,
+      lunch = $2,
+      dinner = $3,
+      headache = $4,
+      fatigue = $5,
+      alert = $6,
+      anxious = $7,
+      bloated = $8,
+      stomacheache = $9,
+      lowEnergy = $10,
+      lethargic = $11
+    WHERE id = $12
     RETURNING *
   `,
-    [feelings.headache, feelings.fatigue, feelings.alert, feelings.anxious, feelings.bloated, feelings.stomacheache, feelings.lowEnergy, feelings.lethargic, id]
+    [users.breakfast, users.lunch, users.dinner, users.headache, users.fatigue, users.alert, users.anxious, users.bloated, users.stomacheache, users.lowEnergy, users.lethargic, id]
   );
 };
 

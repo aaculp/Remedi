@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, Dimensions, StatusBar, ImageBackground } from 'react-native'
 import { Button, Slider } from 'react-native-elements'
+import axios from 'axios'
 
 const { width, height } = Dimensions.get('window')
 
@@ -18,34 +19,38 @@ export default class Search extends Component {
     lowEnergy: false,
     bloated: false,
     lethargic: false,
-    id: ''
+    id: '',
+    name: '',
   }
 
   componentWillMount(){
     let id = this.props.navigation.getParam('id')
+    let name = this.props.navigation.getParam('profilename')
     console.log('this is in component will mount on SEARCH', id)
-    this.setState({id: id})
+    console.log('this is in component will mount on SEARCH', name)
+    this.setState({
+      id: id,
+      name: name,
+    })
   }
 
-  // handleSubmit = async () => {
-  //   console.log(this.state.id)
-  //   let results = await axios.put(`http://173.2.6.21:3001/remedi/feelings/${this.state.id}`, {
-  //     headache: this.state.headache,
-  //     fatigue: this.state.fatigue,
-  //     alert: this.state.alert,
-  //     anxious: this.state.anxious,
-  //     bloated: this.state.bloated,
-  //     stomacheache: this.state.stomacheache,
-  //     lowEnergy:this.state.lowEnergy,
-  //     lethargic: this.state.lethargic
-  //   })
-  //  await console.log(results)
-  //   // this.setState({newId: results.data.data.id})
-  //   this.props.navigation.navigate('Search')
-  // }
-
-  handleSubmit() {
-    console.log(this.state)
+  handleSubmit = async () => {
+    console.log(this.state.id)
+    let results = await axios.put(`http://173.2.6.21:3001/remedi/feelings/${this.state.id}`, {
+      breakfast: this.state.breakfast,
+      lunch: this.state.lunch,
+      dinner: this.state.dinner,
+      headache: this.state.headache,
+      fatigue: this.state.fatigue,
+      alert: this.state.alert,
+      anxious: this.state.anxious,
+      bloated: this.state.bloated,
+      stomacheache: this.state.stomacheache,
+      lowEnergy:this.state.lowEnergy,
+      lethargic: this.state.lethargic
+    })
+    await console.log(results.data.data)
+    this.props.navigation.navigate('Results')
   }
 
   render() {
@@ -77,7 +82,11 @@ export default class Search extends Component {
         <View style = {styles.meals}>
         <Button
           title = 'Breakfast'
-          onPress = {() => this.setState({breakfast: !this.state.breakfast})}
+          onPress = {() => this.setState({
+            breakfast: !this.state.breakfast,
+            lunch: false,
+            dinner: false
+          })}
           buttonStyle = {{
             backgroundColor: this.state.breakfast ? 'green' : 'transparent',
             width: 100,
@@ -90,7 +99,11 @@ export default class Search extends Component {
           />
         <Button
           title = 'Lunch'
-          onPress = {() => this.setState({lunch: !this.state.lunch})}
+          onPress = {() => this.setState({
+            breakfast: false,
+            lunch: !this.state.lunch,
+            dinner: false
+          })}
           buttonStyle = {{
             backgroundColor: this.state.lunch ? 'green' : 'transparent',
             width: 100,
@@ -102,7 +115,11 @@ export default class Search extends Component {
           }} />
         <Button
           title = 'Dinner'
-          onPress = {() => this.setState({dinner: !this.state.dinner})}
+          onPress = {() => this.setState({
+            breakfast: false,
+            lunch: false,
+            dinner: !this.state.dinner
+          })}
           buttonStyle = {{
             backgroundColor: this.state.dinner ? 'green' : 'transparent',
             width: 100,

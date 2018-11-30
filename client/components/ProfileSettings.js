@@ -7,13 +7,21 @@ const { width, height } = Dimensions.get('window')
 
 export default class ProfileSettings extends Component {
   state = {
-    newId: results.data.data.id
+    newId: results.data.data.id,
+    name: '',
   }
+
+  componentWillMount(){
+    let name = this.props.navigation.getParam('name')
+    console.log('this is in component will mount on SEARCH', id)
+    this.setState({name: name})
+  }
+
   render() {
     return(
       <View style = {styles.container}>
         <StatusBar barStyle = 'light-content'/>
-        <Text style = {styles.name}> Welcome Lily </Text>
+        <Text style = {styles.name}> Welcome {this.state.name} </Text>
         <Button
           title = 'Favorites'
           color = 'white'

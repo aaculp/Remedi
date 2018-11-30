@@ -86,7 +86,9 @@ remediController.update = (req, res) => {
 remediController.updateFeelings = (req, res) => {
   Remedi.updateFeelings(
     {
-      foods_id: req.body.foods_id,
+      breakfast: req.body.breakfast,
+      lunch: req.body.lunch,
+      dinner: req.body.dinner,
       headache: req.body.headache,
       fatigue: req.body.fatigue,
       alert: req.body.alert,
@@ -94,13 +96,13 @@ remediController.updateFeelings = (req, res) => {
       bloated: req.body.bloated,
       stomacheache: req.body.stomacheache,
       lowEnergy: req.body.lowEnergy,
-      lethargic: req.body.lethargic
+      lethargic: req.body.lethargic,
     },
     req.params.id,
-  ).then(feelings => {
+  ).then(users => {
     res.json({
       message: 'ok',
-      data: feelings,
+      data: users,
     });
   }).catch(err => {
     console.log(err);

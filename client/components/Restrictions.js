@@ -17,13 +17,19 @@ export default class Restrictions extends Component {
     kosher: false,
     med: false,
     paleo: false,
-    id: ''
+    id: '',
+    name: '',
   }
 
-  componentWillMount(){
+  componentWillMount() {
     let id = this.props.navigation.getParam('newId')
+    let name = this.props.navigation.getParam('profilename')
     console.log('this is in component will mount ON RESTRICTIONS', id)
-    this.setState({id: id})
+    console.log('this is in component will mount on RESTRICTIONS', name)
+    this.setState({
+      id: id,
+      name: name,
+    })
   }
 
   handleSubmit = async () => {
@@ -42,7 +48,8 @@ export default class Restrictions extends Component {
     })
     console.log(results.data.data)
     console.log(this.state.id)
-    this.props.navigation.navigate('Search', {id: this.state.id})
+    let id = this.state.id
+    this.props.navigation.navigate('Search', { id: id })
   }
 
   render() {
@@ -64,7 +71,7 @@ export default class Restrictions extends Component {
                 left: -150,
                 backgroundColor: 'transparent',
               }} />
-            <Text style = {styles.name}>Lily!</Text>
+            <Text style = {styles.name}>{this.state.name}</Text>
           </View>
           <Text style = {styles.text}>Tell us more about yourself</Text>
         </View>

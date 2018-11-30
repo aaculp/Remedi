@@ -6,6 +6,7 @@ import SignIn from './components/SignIn'
 import ProfileSettings from './components/ProfileSettings'
 import Restrictions from './components/Restrictions'
 import Search from './components/Search'
+import Results from  './components/Results'
 
 
 const App = createSwitchNavigator (
@@ -16,6 +17,7 @@ const App = createSwitchNavigator (
       ProfileSettings,
       Restrictions,
       Search,
+      Results,
     },
     {
       initialRouteName: "Splash"

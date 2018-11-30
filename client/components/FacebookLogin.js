@@ -12,6 +12,7 @@ export default class FacebookLogin extends React.Component {
     username: '',
     password: '',
     newId: '',
+    profilename: '',
   }
 
   logIn = async () => {
@@ -48,10 +49,13 @@ export default class FacebookLogin extends React.Component {
       password: this.state.password
     })
     console.log(results.data.data)
-    this.setState({ newId: results.data.data.id })
+
+    this.setState({ newId: results.data.data.id, profilename: results.data.data.name })
+
     let id = this.state.newId
-    console.log(id)
-    this.props.navigation.navigate('Restrictions', { newId: id })
+    let profileName = this.state.profilename
+
+    this.props.navigation.navigate('Restrictions', { newId: id, profilename: profileName })
   }
 
   render() {
