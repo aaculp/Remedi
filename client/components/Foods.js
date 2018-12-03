@@ -6,21 +6,21 @@ const { width, height } = Dimensions.get('window')
 
 export default function Foods(props) {
   return(
-        <View style = {styles.mealContainer}>
-          <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1542729049/Remedi/Images/soup.jpg'}} style = {styles.image} />
-          <View style = {styles.meals}>
-            <Text style = {styles.serving}>{props.foods.name}</Text>
-            <Text style = {styles.servingTitle}>{props.foods.description}</Text>
-            <Text style = {styles.info}>Calories: 141</Text>
-            <Text style = {styles.info}>Sugars: 11</Text>
-            <Text style = {styles.info}>Carbs: 23g</Text>
-            <View style = {styles.bookmarksContainer}>
-              <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529972/Remedi/Images/iPhone_8_2.png'}} style = {styles.bookmarks1} />
-              <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529947/Remedi/Images/iPhone_8_1.png'}} style = {styles.bookmarks2} />
-            </View>
-          </View>
+    <View style = {styles.mealContainer}>
+      <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1542729049/Remedi/Images/soup.jpg'}} style = {styles.image} />
+      <View style = {styles.meals}>
+        <Text style = {styles.serving}>{props.foods.name}</Text>
+        <Text style = {styles.servingTitle}>{props.foods.description}</Text>
+        <Text style = {styles.info}>Calories: 141</Text>
+        <Text style = {styles.info}>Sugars: 11</Text>
+        <Text style = {styles.info}>Carbs: 23g</Text>
+      <View style = {styles.bookmarksContainer}>
+      <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529972/Remedi/Images/iPhone_8_2.png'}} style = {styles.bookmarks1} />
+      <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529947/Remedi/Images/iPhone_8_1.png'}} style = {styles.bookmarks2} />
         </View>
-    )
+      </View>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({

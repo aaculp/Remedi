@@ -82,14 +82,14 @@ Sketch: Coming Soon!
 | Sign Up | H | 2hrs | -- | 2hrs |
 | Sign In | H | 2hrs | -- | 1hr |
 | Profile Settings | H | 4hrs | -- | 3hrs |
-| Search | H | 7hrs | -- | 4hrs |
-| Results | H | 5hrs| -- | -- |
+| Search | H | 7hrs | -- | 5hrs |
+| Results | H | 5hrs| -- | 3hrs |
 | Database | H | 8hrs | -- | 10hrs |
 | Make It | L | -- | 4.5hrs | -- |
 | Buy It | L | -- | 4.5hrs | -- |
-| CSS | L | 5hrs | -- | 3hrs |
+| CSS | L | 5hrs | -- | 4hrs |
 | Functionality | H | 10hrs | 10hrs | 5hrs |
-| Total | 53hrs | 44hrs | 9hrs | 24hrs |
+| Total | 53hrs | 44hrs | 9hrs | 34hrs |
 
 ## ERD
 
