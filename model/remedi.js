@@ -6,15 +6,10 @@ Remedi.findAll = () => {
   return db.query(`SELECT * FROM users`);
 };
 
-Remedi.findById = (id) => {
-  return db.oneOrNone(
-    `
-    SELECT * FROM users
-    WHERE id = $1
-  `,
-    [id]
-  );
+Remedi.findAllResults = () => {
+  return db.query(`SELECT * FROM foods`);
 };
+
 
 Remedi.create = (users) => {
   return db.one(
@@ -62,22 +57,12 @@ Remedi.updateFeelings = (users, id) => {
       anxious = $7,
       bloated = $8,
       stomacheache = $9,
-      lowEnergy = $10,
+      low_energy = $10,
       lethargic = $11
     WHERE id = $12
     RETURNING *
   `,
-    [users.breakfast, users.lunch, users.dinner, users.headache, users.fatigue, users.alert, users.anxious, users.bloated, users.stomacheache, users.lowEnergy, users.lethargic, id]
-  );
-};
-
-Remedi.destroy = (id) => {
-  return db.none(
-    `
-    DELETE FROM users
-    WHERE id = $1
-  `,
-    [id]
+    [users.breakfast, users.lunch, users.dinner, users.headache, users.fatigue, users.alert, users.anxious, users.bloated, users.stomacheache, users.low_energy, users.lethargic, id]
   );
 };
 

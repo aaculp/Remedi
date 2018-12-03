@@ -15,12 +15,12 @@ remediController.index = (req, res) => {
     });
 };
 
-remediController.show = (req, res) => {
-  Remedi.findById(req.params.id)
-    .then(users => {
+remediController.indexResults = (req, res) => {
+  Remedi.findAllResults()
+    .then(foods => {
       res.json({
         message: 'ok',
-        data: users,
+        data: foods,
       });
     })
     .catch(err => {
@@ -98,20 +98,6 @@ remediController.updateFeelings = (req, res) => {
     console.log(err);
     res.status(500).json({ err });
   });
-};
-
-remediController.destroy = (req, res) => {
-  Remedi.destroy(req.params.id)
-    .then(users => {
-      res.json({
-        message: 'ok',
-        data: users,
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({ err });
-    });
 };
 
 module.exports = remediController;

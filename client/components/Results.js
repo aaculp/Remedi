@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View, Image, Dimensions, StatusBar, ImageBackground, ScrollView } from 'react-native'
 import { Button, Slider, SearchBar } from 'react-native-elements'
 import HeaderLogo from './HeaderLogo'
+import axios from 'axios'
+import Foods from './Foods'
 
 
 const { width, height } = Dimensions.get('window')
@@ -16,17 +18,33 @@ export default class Results extends Component {
   }
 
   state = {
-    name: '',
+    foods: '',
+    dataLoaded: '',
   }
 
-  // componentWillMount() {
-  //   let id = this.props.navigation.getParam('name')
-  //   console.log('this is in component will mount on RESULTS', name)
-  //   this.setState({name: name})
-  // }
+  componentWillMount() {
+    let foods = this.props.navigation.getParam('apiData')
+    let dataLoaded = this.props.navigation.getParam('apiDataLoaded')
+    this.setState({
+      foods: foods,
+      dataLoaded: dataLoaded,
+    })
+    console.log('RESULTS page', this.state.foods)
+    console.log('RESULTS page',this.state.dataLoaded)
+  }
+
+  componentDidMount() {
+    if(this.state.dataLoaded) {
+      return this.state.foods.map(d => {
+        return (
+          <Foods foods = {d} key = {d.id}/>
+          )
+      })
+    } else return <Text style = {styles.loading}>Loading...</Text>
+  }
 
   handleSubmit() {
-    console.log('working!')
+
   }
 
 
@@ -40,7 +58,7 @@ export default class Results extends Component {
       <StatusBar barStyle = 'light-content' />
 
         <View style = {styles.titleContainer}>
-          <Text style = {styles.title}> What CAN WE SERVE YOU</Text>
+          <Text style = {styles.title}> WHAT CAN WE SERVE YOU</Text>
           <SearchBar
             placeholder = 'Search'
             placeholderTextColor = 'darkgreen'
@@ -54,50 +72,7 @@ export default class Results extends Component {
           />
         </View>
       <ScrollView>
-        <View style = {styles.mealContainer}>
-          <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1542729049/Remedi/Images/soup.jpg'}} style = {styles.image} />
-          <View style = {styles.meals}>
-            <Text style = {styles.serving}>Serving Size: 1 ball</Text>
-            <Text style = {styles.servingTitle}>Oatmeal Energy Ball</Text>
-            <Text style = {styles.info}>Calories: 141</Text>
-            <Text style = {styles.info}>Sugars: 11</Text>
-            <Text style = {styles.info}>Carbs: 23g</Text>
-            <View style = {styles.bookmarksContainer}>
-              <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529972/Remedi/Images/iPhone_8_2.png'}} style = {styles.bookmarks1} />
-              <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529947/Remedi/Images/iPhone_8_1.png'}} style = {styles.bookmarks2} />
-            </View>
-          </View>
-        </View>
-
-        <View style = {styles.mealContainer}>
-          <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1542729049/Remedi/Images/soup.jpg'}} style = {styles.image}/>
-          <View style = {styles.meals}>
-            <Text style = {styles.serving}>Serving Size: 1 Shot</Text>
-            <Text style = {styles.servingTitle}>Wellness Energy Shot</Text>
-            <Text style = {styles.info}>Calories: 141</Text>
-            <Text style = {styles.info}>Sugars: 11</Text>
-            <Text style = {styles.info}>Carbs: 23g</Text>
-            <View style = {styles.bookmarksContainer}>
-              <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529972/Remedi/Images/iPhone_8_2.png'}} style = {styles.bookmarks1} />
-              <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529947/Remedi/Images/iPhone_8_1.png'}} style = {styles.bookmarks2} />
-            </View>
-          </View>
-        </View>
-
-        <View style = {styles.mealContainer}>
-          <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1542729049/Remedi/Images/soup.jpg'}} style = {styles.image} />
-          <View style = {styles.meals}>
-            <Text style = {styles.serving}>Serving Size: 1 bowl</Text>
-            <Text style = {styles.servingTitle}>Acai Oat Bowl</Text>
-            <Text style = {styles.info}>Calories: 249</Text>
-            <Text style = {styles.info}>Sugars: 52</Text>
-            <Text style = {styles.info}>Carbs: 70</Text>
-            <View style = {styles.bookmarksContainer}>
-              <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529972/Remedi/Images/iPhone_8_2.png'}} style = {styles.bookmarks1}/>
-              <Image source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543529947/Remedi/Images/iPhone_8_1.png'}} style = {styles.bookmarks2}/>
-            </View>
-          </View>
-        </View>
+        {this.componentDidMount()}
       </ScrollView>
 
       <View>
@@ -193,4 +168,9 @@ const styles = StyleSheet.create({
     borderColor: 'darkgreen',
     borderWidth: 5,
   },
+  loading: {
+    fontSize: 40,
+    color: 'white',
+    textAlign: 'center',
+  }
 })

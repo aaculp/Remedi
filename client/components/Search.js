@@ -31,6 +31,8 @@ export default class Search extends Component {
     lethargic: false,
     id: '',
     name: '',
+    apiData: null,
+    apiDataLoaded: false,
   }
 
   componentWillMount(){
@@ -46,7 +48,7 @@ export default class Search extends Component {
 
   handleSubmit = async () => {
     console.log(this.state.id)
-    let results = await axios.put(`http://173.2.6.21:3001/remedi/feelings/${this.state.id}`, {
+    let results = await axios.put(`http://172.20.10.2:3001/remedi/feelings/${this.state.id}`, {
       breakfast: this.state.breakfast,
       lunch: this.state.lunch,
       dinner: this.state.dinner,
@@ -59,15 +61,20 @@ export default class Search extends Component {
       lowEnergy:this.state.lowEnergy,
       lethargic: this.state.lethargic
     })
-    await console.log(results.data.data)
-    this.props.navigation.navigate('Results')
+    await axios.get(`http://172.20.10.2:3001/remedi/results/`)
+    .then((res) => {
+      this.setState({
+        apiDataLoaded: true,
+        apiData: res.data.data
+      })
+      console.log(this.state.apiData)
+    })
+    let data = this.state.apiData
+    let apiDidLoad = this.state.apiDataLoaded
+    this.props.navigation.navigate('Results', { apiData: data, apiDataLoaded: apiDidLoad } )
   }
 
   render() {
-    console.log(this.state.breakfast)
-    console.log(this.state.lunch)
-    console.log(this.state.dinner)
-    console.log(this.state.value)
     return (
       <ImageBackground
       source = {{uri: 'https://res.cloudinary.com/aaronculp/image/upload/v1543255899/Remedi/Images/Begin_My_Search_Filled_In.png'}}
