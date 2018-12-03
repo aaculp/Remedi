@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const server = express();
 
 server.use(logger('dev'));
-app.use(express.static('client/build'))
+server.use(express.static('client/build'))
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
 

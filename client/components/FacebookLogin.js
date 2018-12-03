@@ -43,7 +43,7 @@ export default class FacebookLogin extends React.Component {
 
   handleSignUp = async (e) => {
     e.preventDefault()
-    let results = await axios.post('http://172.20.10.2:3001/remedi/', {
+    let results = await axios.post('https://remedi-ga.herokuapp.com/remedi/', {
       name: this.state.name,
       username: this.state.username,
       password: this.state.password

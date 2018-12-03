@@ -34,7 +34,7 @@ export default class Restrictions extends Component {
 
   handleSubmit = async () => {
     console.log(this.state.id)
-    let results = await axios.put(`http://172.20.10.2:3001/remedi/${this.state.id}`, {
+    let results = await axios.put(`https://remedi-ga.herokuapp.com/remedi/${this.state.id}`, {
       gluten: this.state.gluten,
       vegan: this.state.vegan,
       pescatarian: this.state.pescatarian,

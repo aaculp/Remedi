@@ -48,7 +48,7 @@ export default class Search extends Component {
 
   handleSubmit = async () => {
     console.log(this.state.id)
-    let results = await axios.put(`http://172.20.10.2:3001/remedi/feelings/${this.state.id}`, {
+    let results = await axios.put(`https://remedi-ga.herokuapp.com/remedi/feelings/${this.state.id}`, {
       breakfast: this.state.breakfast,
       lunch: this.state.lunch,
       dinner: this.state.dinner,
@@ -61,7 +61,7 @@ export default class Search extends Component {
       lowEnergy:this.state.lowEnergy,
       lethargic: this.state.lethargic
     })
-    await axios.get(`http://172.20.10.2:3001/remedi/results/`)
+    await axios.get(`https://remedi-ga.herokuapp.com/remedi/results/`)
     .then((res) => {
       this.setState({
         apiDataLoaded: true,
