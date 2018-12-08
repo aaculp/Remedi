@@ -1,5 +1,5 @@
 # Project Overview
-https://remedi-ga.herokuapp.com/
+https://expo.io/@aaronculp/Remedi
 ## Project Schedule
 
 |  Day | Deliverable | Status
